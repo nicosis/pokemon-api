@@ -13,7 +13,7 @@ const PokemonList = () => {
   const [shiny, setShiny] = useState(false);
 
   useEffect(() => {
-    fetch(pokeUrl + "?limit=30")
+    fetch(pokeUrl + "?limit=100&offset=0")
       .then((response) => response.json())
       .then((data) => {
         setPokesApi(data.results);
@@ -61,7 +61,7 @@ const PokemonList = () => {
               <option value="" defaultValue>
                 Lista de Pokemones Disponibles
               </option>
-              {pokesApi.map((itm, idx) => (
+              {pokesApi.sort((a, b) => a.name.localeCompare(b.name)).map((itm, idx) => (
                 <option key={idx} value={itm.name}>
                   {itm.name.toUpperCase()}
                 </option>
@@ -70,7 +70,7 @@ const PokemonList = () => {
           </div>
         </nav>
         {currentPokeName === "" ? (
-          <div class="p-3 my-5 bg-danger text-white text-center">
+          <div className="p-3 my-5 bg-danger text-white text-center">
             <img src={logo} alt="Logo" />
             <h2>Encuentra tu Pokemon Favorito</h2>
           </div>
