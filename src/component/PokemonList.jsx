@@ -78,7 +78,7 @@ const PokemonList = () => {
             <h2>Encuentra tu Pokemon Favorito</h2>
           </div>
         ) : (
-          <div className="card my-3 mx-auto" style={{ maxWidth: "500px" }}>
+          <div className="card m-auto my-4" style={{ maxWidth: "600px" }}>
             <div className="row g-0">
               <div className="col-md-7">
                 <img
@@ -89,9 +89,9 @@ const PokemonList = () => {
               </div>
               <div className="col-md-5 my-auto">
                 <div className="card-body">
-                  <h2 className="card-title fw-bold">
+                  <h3 className="card-title fw-bold">
                     {currentPokeName.toUpperCase()}
-                  </h2>
+                  </h3>
                   <h5 className="card-text fw-bold mb-1">
                     Experiencia: {currentPokeApi.base_experience}
                   </h5>
