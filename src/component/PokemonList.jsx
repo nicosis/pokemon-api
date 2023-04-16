@@ -78,7 +78,7 @@ const PokemonList = () => {
             <h2>Encuentra tu Pokemon Favorito</h2>
           </div>
         ) : (
-          <div className="card my-3 mx-auto" style={{ maxWidth: "600px" }}>
+          <div className="card my-3 mx-auto" style={{ maxWidth: "500px" }}>
             <div className="row g-0">
               <div className="col-md-7">
                 <img
