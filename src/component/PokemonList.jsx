@@ -39,7 +39,8 @@ const PokemonList = () => {
   };
 
   return (
-    <div>
+    <div id='page-container'>
+      <div id="content-wrap">
         <nav className="navbar navbar-dark bg-dark">
           <div className="container d-flex justify-content-center">
             <a className="navbar-brand" href="#">
@@ -61,11 +62,13 @@ const PokemonList = () => {
               <option value="" defaultValue>
                 Lista de Pokemones Disponibles
               </option>
-              {pokesApi.sort((a, b) => a.name.localeCompare(b.name)).map((itm, idx) => (
-                <option key={idx} value={itm.name}>
-                  {itm.name.toUpperCase()}
-                </option>
-              ))}
+              {pokesApi
+                .sort((a, b) => a.name.localeCompare(b.name))
+                .map((itm, idx) => (
+                  <option key={idx} value={itm.name}>
+                    {itm.name.toUpperCase()}
+                  </option>
+                ))}
             </select>
           </div>
         </nav>
@@ -114,7 +117,8 @@ const PokemonList = () => {
             </div>
           </div>
         )}
-      <footer>
+      </div>
+      <footer id="footer">
         <a href="https://github.com/nicosis/pokemon-api" target="_blank">
           made by nicosis
         </a>
