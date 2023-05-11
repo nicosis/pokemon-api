@@ -23,13 +23,13 @@ const PokemonList = () => {
   }, []);
 
   useEffect(() => {
+    setShiny(false); // resetea shiny a false al cambiar de pokemon
     fetch(currentPokeUrl)
       .then((response) => response.json())
       .then((data) => {
         setCurrentPokeApi(data);
         setCurrentPokeImg(data.sprites.other["official-artwork"].front_default);
         setCurrentPokeImgSh(data.sprites.other["official-artwork"].front_shiny);
-        // console.log(data.sprites.other["official-artwork"].front_shiny);
       })
       .catch((error) => console.log(error));
   }, [currentPokeName]);
@@ -39,7 +39,7 @@ const PokemonList = () => {
   };
 
   return (
-    <div id='page-container'>
+    <div id="page-container">
       <div id="content-wrap">
         <nav className="navbar navbar-dark bg-dark">
           <div className="container d-flex justify-content-center">
